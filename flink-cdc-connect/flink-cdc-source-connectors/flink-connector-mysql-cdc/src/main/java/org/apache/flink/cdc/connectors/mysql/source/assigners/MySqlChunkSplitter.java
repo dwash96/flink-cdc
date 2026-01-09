@@ -114,10 +114,10 @@ public class MySqlChunkSplitter implements ChunkSplitter {
             throws Exception {
         if (!hasNextChunk()) {
             analyzeTable(partition, tableId);
-            Optional<List<MySqlSnapshotSplit>> evenlySplitChunks =
-                    trySplitAllEvenlySizedChunks(partition, tableId);
-            if (evenlySplitChunks.isPresent()) {
-                return evenlySplitChunks.get();
+            // Optional<List<MySqlSnapshotSplit>> evenlySplitChunks =
+            //        trySplitAllEvenlySizedChunks(partition, tableId);
+            if (false) {
+                return false;
             } else {
                 synchronized (lock) {
                     this.currentSplittingTableId = tableId;
